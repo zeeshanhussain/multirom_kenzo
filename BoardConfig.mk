@@ -66,7 +66,6 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 26838785024 # (26838801408 - 16384)
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/xiaomi/kenzo/twrp.fstab
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
@@ -79,3 +78,17 @@ TW_DEFAULT_EXTERNAL_STORAGE := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_INCLUDE_CRYPTO := true
 TW_THEME := portrait_hdpi
+HAS_MOUSE := 0
+
+# MULTIROM
+TARGET_RECOVERY_IS_MULTIROM := true
+MR_INPUT_TYPE := type_a
+MR_INIT_DEVICES := device/xiaomi/kenzo/multirom/mr_init_devices.c
+DEVICE_RESOLUTION := 1080 x 1920
+MR_DPI := hdpi
+MR_DPI_FONT := 216
+MR_FSTAB := device/xiaomi/kenzo/twrp.fstab
+MR_DEVICE_HOOKS := device/xiaomi/kenzo/multirom/mr_hooks.c
+MR_KEXEC_MEM_MIN := 0x0
+MR_DEVICE_HOOKS_VER := 5
+MR_DEVICE_VARIANTS := kenzo
